@@ -68,3 +68,8 @@ Here are some pending ideas that I might try to implement if needed. I am open t
 - [ ] Reduce image size
 - [ ] Optionally pass arguments to rsgain using environment variables
 - [ ] Omit previously scanned files (possibly by storing them in a SQLite database)
+
+## Special Thanks To
+
+- The [rsgain project](https://github.com/complexlogic/rsgain) for providing the core functionality of this image.
+- The [cron project](https://github.com/lnquy/cron) for offering an easy way to display cron expressions in a human-friendly way.
