@@ -4,7 +4,7 @@ This Docker image normalizes the volume of your entire music library using [rsga
 
 I created this image because I couldn't find a way to run rsgain periodically using cron in a container, as it can take a long time to process all the files in a large library.
 
-You can find the Dockerfile and all the resources I used to create this image in [my GitHub repository](https://github.com/pjmeca). If you find this useful, please leave a ⭐. Feel free to request new features *or make a pull request if you're up for it!* 💪
+You can find the Dockerfile and all the resources I used to create this image in [my GitHub repository](https://github.com/pjmeca/volume-normalizer). If you find this useful, please leave a ⭐. Feel free to request new features *or make a pull request if you're up for it!* 💪
 
 ## Usage
 
