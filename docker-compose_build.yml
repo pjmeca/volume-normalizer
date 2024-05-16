@@ -1,0 +1,16 @@
+name: volume-normalizer
+
+services:
+  volume-normalizer:
+    image: pjmeca/volume-normalizer:latest
+    container_name: volume-normalizer
+    build:
+      context: .
+      platforms:
+        - linux/amd64
+    volumes:
+      - /your/main/music/path:/mnt # Change this
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      CRON_SCHEDULE: "* * * * *" # Customize your cron if needed
+    restart: unless-stopped
