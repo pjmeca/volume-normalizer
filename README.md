@@ -65,9 +65,14 @@ Sleeping until next run.
 
 Here are some pending ideas that I might try to implement if needed. I am open to suggestions.
 
-- [ ] Reduce image size
+- [x] Reduce image size
 - [ ] Optionally pass arguments to rsgain using environment variables
 - [ ] Omit previously scanned files (possibly by storing them in a SQLite database)
+
+## Changelog
+
+- 1.0.0: Initial release
+- 1.1.0: Reduce Docker image size
 
 ## Special Thanks To
 
