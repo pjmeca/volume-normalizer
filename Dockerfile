@@ -12,7 +12,7 @@ LABEL org.label-schema.name="pjmeca/volume-normalizer" \
     org.label-schema.description="This Docker image normalizes the volume of your entire music library using rsgain." \
     org.label-schema.url="https://hub.docker.com/r/pjmeca/volume-normalizer" \
     org.label-schema.vcs-url="https://github.com/pjmeca/volume-normalizer" \
-    org.label-schema.version="1.1.0" \
+    org.label-schema.version="1.2.0" \
     org.label-schema.schema-version="1.0.0-rc.1" \
     org.label-schema.docker.cmd="docker run -d --name volume-normalizer -v /your/main/music/path:/mnt -v /etc/localtime:/etc/localtime:ro -e CRON_SCHEDULE=\"0 4 * * *\" --restart unless-stopped pjmeca/volume-normalizer:latest" \
     maintainer="pjmeca"
