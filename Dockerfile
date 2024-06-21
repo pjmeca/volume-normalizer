@@ -27,6 +27,8 @@ RUN apt-get update && \
     apt install -y --no-install-recommends /tmp/rsgain.deb && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/rsgain.deb
+RUN mkdir -p ~/.config/rsgain/presets && \
+    touch ~/.config/rsgain/presets/user_preset.ini
 COPY start_rsgain.sh start.sh ./
 RUN chmod +x start_rsgain.sh start.sh
 CMD ["./start.sh"]

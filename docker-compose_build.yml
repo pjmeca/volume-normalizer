@@ -10,6 +10,7 @@ services:
         - linux/amd64
     volumes:
       - /your/main/music/path:/mnt # Change this
+      #- /your/preset.ini:/root/.config/rsgain/presets/user_preset.ini:ro # Custom preset
       - /etc/localtime:/etc/localtime:ro
     environment:
       CRON_SCHEDULE: "* * * * *" # Customize your cron if needed
