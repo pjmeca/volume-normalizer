@@ -8,12 +8,12 @@ You can find the Dockerfile and all the resources I used to create this image in
 
 ## Usage
 
-The following example creates a container that normalizes your music library everyday at 4 AM. You can define your own presets by mounting a preset file (by default, the `no_album` preset is used).
+The following example creates a container that normalizes your music library everyday at 4 AM. You can configure how rsgain behaves by passing arguments via the `ADDITIONAL_ARGS` environment variable and define your own presets by mounting a preset file (by default, the `no_album` preset is used).
 
 ### Using docker run:
 
 ```sh
-docker run -d --name volume-normalizer -v /your/main/music/path:/mnt -v /your/preset.ini:/root/.config/rsgain/presets/user_preset.ini:ro -v /etc/localtime:/etc/localtime:ro -e CRON_SCHEDULE="0 4 * * *" --restart unless-stopped pjmeca/volume-normalizer:latest
+docker run -d --name volume-normalizer -v /your/main/music/path:/mnt -v /your/preset.ini:/root/.config/rsgain/presets/user_preset.ini:ro -v /etc/localtime:/etc/localtime:ro -e CRON_SCHEDULE="0 4 * * *" -e ADDITIONAL_ARGS="-S" --restart unless-stopped pjmeca/volume-normalizer:latest
 ```
 
 ### Using docker-compose:
@@ -31,6 +31,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
     environment:
       CRON_SCHEDULE: "0 4 * * *" # Customize your cron if needed
+      # ADDITIONAL_ARGS: "-S" # Additional arguments
     restart: unless-stopped
 ```
 
