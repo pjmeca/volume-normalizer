@@ -8,7 +8,7 @@ else
     preset=no_album
 fi
 
-/usr/bin/rsgain easy -m MAX -p $preset /mnt
+/usr/bin/rsgain easy -m MAX -p $preset $ADDITIONAL_ARGS /mnt
 # -m MAX: use max number of threads
 # -p no_album: disable album tags
 

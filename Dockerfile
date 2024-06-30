@@ -18,6 +18,7 @@ LABEL org.label-schema.name="pjmeca/volume-normalizer" \
     maintainer="pjmeca"
 WORKDIR /app
 ENV CRON_SCHEDULE="0 */1 * * *"
+ENV ADDITIONAL_ARGS=
 COPY --from=download-hcron /usr/local/bin/hcron .
 ARG VERSION=3.5.1 \
     ARCH=amd64
