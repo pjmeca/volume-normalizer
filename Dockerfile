@@ -19,7 +19,7 @@ LABEL org.label-schema.name="pjmeca/volume-normalizer" \
 WORKDIR /app
 ENV CRON_SCHEDULE="0 */1 * * *"
 COPY --from=download-hcron /usr/local/bin/hcron .
-ARG VERSION=3.5 \
+ARG VERSION=3.5.1 \
     ARCH=amd64
 RUN apt-get update && \
     apt-get install -y --no-install-recommends curl ca-certificates openssl cron && \
