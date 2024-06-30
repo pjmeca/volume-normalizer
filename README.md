@@ -73,6 +73,9 @@ Here are some pending ideas that I might try to implement if needed. I am open t
 
 ## Changelog
 
+- 1.3.0
+  - Upgrade rsgain to v3.5.1
+  - Customize rsgain arguments
 - 1.2.0: Mount a custom preset file
 - 1.1.0: Reduce Docker image size
 - 1.0.0: Initial release
