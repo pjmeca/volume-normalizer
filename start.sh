@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Store environment variables for cron to read
+printenv > /etc/environment
+
 touch /var/log/start_rsgain.log
 
 # Configure cron job
