@@ -73,6 +73,7 @@ Here are some pending ideas that I might try to implement if needed. I am open t
 
 ## Changelog
 
+- 1.3.2: Store environment variables in `/etc/environment` for cron to read
 - 1.3.1: Fix line endings from CRLF to LF
 - 1.3.0
   - Upgrade rsgain to v3.5.1
