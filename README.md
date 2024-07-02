@@ -1,5 +1,9 @@
 # pjmeca/volume-normalizer
 
+[![GitHub Repo stars](https://img.shields.io/github/stars/pjmeca/volume-normalizer?style=flat&logo=github&label=Star%20this%20repo!)](https://github.com/pjmeca/volume-normalizer)
+[![Docker Image Version (tag)](https://img.shields.io/docker/v/pjmeca/volume-normalizer/latest?logo=docker)](https://hub.docker.com/r/pjmeca/volume-normalizer)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/pjmeca/volume-normalizer/docker-image.yml?branch=main)
+
 This Docker image normalizes the volume of your entire music library using [rsgain](https://github.com/complexlogic/rsgain). Your audio files will not be modified; only a metadata tag with the ReplayGain value will be added or updated (more details can be found in the [rsgain repo](https://github.com/complexlogic/rsgain)).
 
 I created this image because I couldn't find a way to run rsgain periodically using cron in a container, as it can take a long time to process all the files in a large library.
