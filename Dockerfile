@@ -12,7 +12,7 @@ LABEL org.label-schema.name="pjmeca/volume-normalizer" \
     org.label-schema.description="This Docker image normalizes the volume of your entire music library using rsgain." \
     org.label-schema.url="https://hub.docker.com/r/pjmeca/volume-normalizer" \
     org.label-schema.vcs-url="https://github.com/pjmeca/volume-normalizer" \
-    org.label-schema.version="1.3.2" \
+    org.label-schema.version="1.4.0" \
     org.label-schema.schema-version="1.0.0-rc.1" \
     org.label-schema.docker.cmd="docker run -d --name volume-normalizer -v /your/main/music/path:/mnt -v /your/preset.ini:/root/.config/rsgain/presets/user_preset.ini:ro -v /etc/localtime:/etc/localtime:ro -e CRON_SCHEDULE=\"0 4 * * *\" -e ADDITIONAL_ARGS=\"-S\" --restart unless-stopped pjmeca/volume-normalizer:latest" \
     maintainer="pjmeca"
@@ -23,11 +23,12 @@ COPY --from=download-hcron /usr/local/bin/hcron .
 ARG VERSION=3.5.1 \
     ARCH=amd64
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl ca-certificates openssl cron && \
+    apt-get install -y --no-install-recommends curl ca-certificates openssl cron procps && \
     curl -sSL -o /tmp/rsgain.deb "https://github.com/complexlogic/rsgain/releases/download/v${VERSION}/rsgain_${VERSION}_${ARCH}.deb" && \
     apt install -y --no-install-recommends /tmp/rsgain.deb && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/rsgain.deb
+HEALTHCHECK --interval=60s --timeout=3s --retries=3 CMD pgrep rsgain || /usr/bin/rsgain -v
 RUN mkdir -p ~/.config/rsgain/presets && \
     touch ~/.config/rsgain/presets/user_preset.ini
 COPY start_rsgain.sh start.sh ./
